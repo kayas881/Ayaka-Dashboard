@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Franchise';
+  src: url('/fonts/Franchise-Free-Bold.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mangold';
+  src: url('/fonts/MANGOLD.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
