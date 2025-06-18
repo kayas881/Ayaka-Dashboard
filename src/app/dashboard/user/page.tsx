@@ -32,13 +32,41 @@ export default function UserDashboard() {
 
       {/* Main content */}
       <div className="flex-1 p-6 flex justify-center items-start">
-        <div
-          className="bg-black/70 rounded-xl p-6 w-full max-w-4xl shadow-lg bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${userData.equippedBanner})`,
-            color: userData.equippedColor,
-          }}
-        >
+<div
+  className="relative bg-black/70 rounded-xl p-6 w-full max-w-4xl  shadow-lg bg-cover bg-center"
+  style={{ backgroundImage: `url(${userData.equippedBanner})`, color: userData.equippedColor }}
+>
+  {/* ─── currency bar ─────────────────────────────── */}
+<div className="absolute top-10 right-6 flex items-center gap-6  font-bold"
+                 style={{ fontFamily: "Mangold",
+                                 fontWeight: 1000, // Make font extra bold
+    WebkitTextStroke: '0.5px black', // Thicker stroke
+    textShadow: '0 0 18px #000, 0 0 2px #000', // Stronger shadow
+                 
+                   fontSize: '24px',
+             }}>
+  {/* Mora */}
+  <div className="flex items-center gap-0.5">
+    <img src="https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png" alt="Mora"
+         className="w-8 h-8" />
+    <span>{userData.mora}</span>
+  </div>
+
+  {/* Primogems */}
+  <div className="flex items-center gap-0.5">
+    <img src="https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png" alt="Primogems"
+         className="w-8 h-8" />
+    <span>{userData.primogems}</span>
+  </div>
+
+  {/* Resin */}
+  <div className="flex items-center gap-0.5">
+    <img src="https://static.wikia.nocookie.net/gensin-impact/images/3/35/Item_Fragile_Resin.png" alt="Resin"
+         className="w-8 h-8" />
+    <span>{userData.resin}/160</span>
+  </div>
+</div>
+
           <div className="flex items-center space-x-4 mb-6">
             <img
               src={session.user.image ?? "/default-avatar.png"}
@@ -47,41 +75,36 @@ export default function UserDashboard() {
             />
             <div>
                 <h2
-                className="text-3xl font-extrabold uppercase"
+                className="text-2xl font-extrabold uppercase"
                 style={{ fontFamily: "Franchise",
-                   WebkitTextStroke: '0.5px black', // Stroke
-                   textShadow: '0 0 10px #000000', // Shadow
+                   fontWeight: 1000, // Make font extra bold
+    WebkitTextStroke: '0.5px black', // Thicker stroke
+    textShadow: '0 0 18px #000, 0 0 2px #000', // Stronger shadow
                  }}
                 >
                 {userData.username.toUpperCase()}'S AYA PROFILE
                 </h2>
 
-              <p className="text-2xl font-extrabold" style={{ fontFamily: "Franchise"
-                , WebkitTextStroke: '0.4px black', // Stroke
-                   textShadow: '0 0 10px #000000', // Shadow
-               }}>
+              <p className="text-2xl font-extrabold"                 style={{ fontFamily: "Franchise",
+                   fontWeight: 1000, // Make font extra bold
+    WebkitTextStroke: '0.5px black', // Thicker stroke
+    textShadow: '0 0 18px #000, 0 0 2px #000', // Stronger shadow
+                 }}
+                >
                 {userData.rankName.toUpperCase()} (AR {userData.rank})
               </p>
             </div>
           </div>
 
           <div
-            className="grid grid-cols-2 gap-4 font-bold"
+            className=" font-bold"
             style={{ fontFamily: "Mangold",
-               WebkitTextStroke: '0.3px black', // Stroke
-                   textShadow: '0 0 10px #000000', // Shadow
+                   fontWeight: 1000, // Make font extra bold
+    WebkitTextStroke: '0.5px black', // Thicker stroke
+    textShadow: '0 0 18px #000, 0 0 2px #000', // Stronger shadow
                    fontSize: '24px',
              }}
           >
-            <p>
-              <strong>Mora:</strong> {userData.mora}
-            </p>
-            <p>
-              <strong>Primogems:</strong> {userData.primogems}
-            </p>
-            <p>
-              <strong>Resin:</strong> {userData.resin}/160
-            </p>
             <p>
               <strong>Wishes Made:</strong> {userData.wishesMade}
             </p>
